@@ -44,7 +44,7 @@ docker run --name ARKSurvivalEvolved -d \
 	--env 'GID=100' \
 	--volume /path/to/steamcmd:/serverdata/steamcmd \
 	--volume /path/to/arksa:/serverdata/serverfiles \
-	ich777/steamcmd:asa
+	ghcr.io/mainfrezzer/ase-docker
 ```
 
 This Docker was mainly edited for better use with Unraid, if you don't use Unraid you should definitely try it!
