@@ -44,6 +44,7 @@ docker run --name ARKSurvivalEvolved -d \
 	--env 'GID=100' \
 	--volume /path/to/steamcmd:/serverdata/steamcmd \
 	--volume /path/to/arkse:/serverdata/serverfiles \
+	--ulimit nofile=2048:65530 \
 	ghcr.io/mainfrezzer/ase-docker
 ```
 
