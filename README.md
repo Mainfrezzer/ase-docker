@@ -11,7 +11,7 @@ Update Notice: Simply restart the container if a newer version of the game is av
 
 You can also run multiple servers with only one SteamCMD directory!
 
-## Example Env params for CS:Source
+## Example Env params for Ark Suvival Evolved
 | Name | Value | Example |
 | --- | --- | --- |
 | STEAMCMD_DIR | Folder for SteamCMD | /serverdata/steamcmd |
@@ -29,7 +29,7 @@ You can also run multiple servers with only one SteamCMD directory!
 | USERNAME | Leave blank for anonymous login | blank |
 | PASSWRD | Leave blank for anonymous login | blank |
 
-## Run example for CS:Source
+## Run example for Ark Suvival Evolved
 ```
 docker run --name ARKSurvivalEvolved -d \
 	-p 7777:7777/udp \
@@ -43,7 +43,7 @@ docker run --name ARKSurvivalEvolved -d \
 	--env 'UID=99' \
 	--env 'GID=100' \
 	--volume /path/to/steamcmd:/serverdata/steamcmd \
-	--volume /path/to/arksa:/serverdata/serverfiles \
+	--volume /path/to/arkse:/serverdata/serverfiles \
 	ghcr.io/mainfrezzer/ase-docker
 ```
 
