@@ -1,5 +1,5 @@
 # SteamCMD in Docker optimized for Unraid
-This Docker will download and install SteamCMD. It will also install ARK:SurvivalAscended and run it (Normal server startup of ARK can take a long time!).
+This Docker will download and install SteamCMD. It will also install ARK:SurvivalEvolved and run it (Normal server startup of ARK can take a long time!).
 
 **WARNING:** You have to set the value vm.max_map_count to at least 256000 on the host as root with the command:  
 `echo 265000 > /proc/sys/vm/max_map_count`  
@@ -16,9 +16,9 @@ You can also run multiple servers with only one SteamCMD directory!
 | --- | --- | --- |
 | STEAMCMD_DIR | Folder for SteamCMD | /serverdata/steamcmd |
 | SERVER_DIR | Folder for gamefile | /serverdata/serverfiles |
-| GAME_ID | The GAME_ID that the container downloads at startup. If you want to install a static or beta version of the game change the value to: '2430930 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install). | 2430930 |
-| MAP | Enter your preferred map name | TheIsland_WP |
-| SERVER_NAME | Your server name goes here | ASA Docker |
+| GAME_ID | The GAME_ID that the container downloads at startup. If you want to install a static or beta version of the game change the value to: '376030 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install). | 376030 |
+| MAP | Enter your preferred map name | TheIsland |
+| SERVER_NAME | Your server name goes here | ASE Docker |
 | SRV_PWD | Your server password goes here | Docker |
 | SRV_ADMIN_PWD | Your server admin password goes here | adminDocker |
 | GAME_PARAMS | Enter your game parameters seperated with ? and start with a ? | ?Port=7777?MaxPlayers=20 |
@@ -31,11 +31,11 @@ You can also run multiple servers with only one SteamCMD directory!
 
 ## Run example for CS:Source
 ```
-docker run --name ARKSurvivalAscended -d \
+docker run --name ARKSurvivalEvolved -d \
 	-p 7777:7777/udp \
-	--env 'GAME_ID=2430930' \
+	--env 'GAME_ID=376030' \
 	--env 'MAP=TheIsland_WP' \
-	--env 'SERVER_NAME=ASA Docker' \
+	--env 'SERVER_NAME=ASE Docker' \
 	--env 'SRV_PWD=Docker' \
 	--env 'SRV_ADMIN_PWD=adminDocker' \
 	--env 'GAME_PARAMS=?Port=7777?MaxPlayers=20' \
