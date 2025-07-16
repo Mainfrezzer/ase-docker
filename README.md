@@ -34,7 +34,7 @@ You can also run multiple servers with only one SteamCMD directory!
 docker run --name ARKSurvivalEvolved -d \
 	-p 7777:7777/udp \
 	--env 'GAME_ID=376030' \
-	--env 'MAP=TheIsland_WP' \
+	--env 'MAP=TheIsland' \
 	--env 'SERVER_NAME=ASE Docker' \
 	--env 'SRV_PWD=Docker' \
 	--env 'SRV_ADMIN_PWD=adminDocker' \
