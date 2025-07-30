@@ -21,6 +21,7 @@ echo "---Update Server---"
 if [ "${USERNAME}" == "" ]; then
   if [ "${VALIDATE}" == "true" ]; then
     echo "---Validating installation---"
+    rm -r ${DATA_DIR}/serverfiles/steamapps
     ${STEAMCMD_DIR}/steamcmd.sh \
     +@sSteamCmdForcePlatformType windows \
     +force_install_dir ${SERVER_DIR} \
@@ -38,6 +39,7 @@ if [ "${USERNAME}" == "" ]; then
 else
   if [ "${VALIDATE}" == "true" ]; then
     echo "---Validating installation---"
+    rm -r ${DATA_DIR}/serverfiles/steamapps
     ${STEAMCMD_DIR}/steamcmd.sh \
     +@sSteamCmdForcePlatformType windows \
     +force_install_dir ${SERVER_DIR} \
