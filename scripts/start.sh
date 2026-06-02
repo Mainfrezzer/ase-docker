@@ -26,7 +26,7 @@ chown -R ${UID}:${GID} ${DATA_DIR}
 
 echo "---Starting...---"
 term_handler() {
-	kill -SIGINT  $(ppgrep -fn 'ShooterGameServer.exe')
+	kill -SIGINT  $(pgrep -fn 'ShooterGameServer.exe')
 	tail --pid=$(pgrep -fn 'ShooterGameServer.exe') -f 2>/dev/null
 	exit 143;
 }
