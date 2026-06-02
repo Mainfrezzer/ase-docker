@@ -82,17 +82,17 @@ else
 fi
 
 export WINEARCH=win64
-export WINEPREFIX=/serverdata/serverfiles/WINE64
+export WINEPREFIX=/serverdata/serverfiles/WINE11
 export WINEDEBUG=-all
 echo "---Checking if WINE workdirectory is present---"
-if [ ! -d ${SERVER_DIR}/WINE64 ]; then
+if [ ! -d ${SERVER_DIR}/WINE11 ]; then
   echo "---WINE workdirectory not found, creating please wait...---"
-  mkdir ${SERVER_DIR}/WINE64
+  mkdir ${SERVER_DIR}/WINE11
 else
   echo "---WINE workdirectory found---"
 fi
 echo "---Checking if WINE is properly installed---"
-if [ ! -d ${SERVER_DIR}/WINE64/drive_c/windows ]; then
+if [ ! -d ${SERVER_DIR}/WINE11/drive_c/windows ]; then
   echo "---Setting up WINE---"
   cd ${SERVER_DIR}
   winecfg > /dev/null 2>&1
@@ -111,10 +111,10 @@ if [ ! -f ${SERVER_DIR}/ShooterGame/Binaries/Win64/ShooterGameServer.exe ]; then
   sleep infinity
 else
   cd ${SERVER_DIR}/ShooterGame/Binaries/Win64
-  wine64 ShooterGameServer.exe ${MAP}?listen?SessionName=${SERVER_NAME}?ServerPassword=${SRV_PWD}?ServerAdminPassword=${SRV_ADMIN_PWD}${GAME_PARAMS} ${GAME_PARAMS_EXTRA} >/dev/null 2>&1 &
+  wine ShooterGameServer.exe ${MAP}?listen?SessionName=${SERVER_NAME}?ServerPassword=${SRV_PWD}?ServerAdminPassword=${SRV_ADMIN_PWD}${GAME_PARAMS} ${GAME_PARAMS_EXTRA} >/dev/null 2>&1 &
   echo "Waiting for logs..."
   ATTEMPT=0
-  sleep 2
+  sleep 10
   while [ ! -f "${SERVER_DIR}/ShooterGame/Saved/Logs/ShooterGame.log" ]; do
     ((ATTEMPT++))
     if [ $ATTEMPT -eq 10 ]; then

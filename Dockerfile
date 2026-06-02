@@ -1,6 +1,6 @@
-FROM ich777/winehq-baseimage
+FROM ghcr.io/mainfrezzer/docker-winehq-baseimage:latest
 
-LABEL org.opencontainers.image.authors="mainfrezzer@magnon.ovh"
+LABEL org.opencontainers.image.authors="Mainfrezzer"
 LABEL org.opencontainers.image.source="https://github.com/Mainfrezzer/ase-docker"
 
 RUN apt-get update && \

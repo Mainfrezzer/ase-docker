@@ -1,5 +1,5 @@
 #!/bin/bash
-killpid="$(pidof ShooterGameServer.exe)"
+killpid="$(pidof start.exe /exec ShooterGameServer.exe)"
 while true
 do
   tail --pid=$killpid -f /dev/null
